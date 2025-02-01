@@ -6,14 +6,14 @@ const default_config = {
   disabled: [],
   openLastVisitedTab: true,
   localIcons: true,
-   temperature: {
+  temperature: {
     location: "Yonkers", // Set your city here
     scale: "C" // "C" for Celsius or "F" for Fahrenheit
   },
   tabs: [
     {
       name: "home",
-      background_url: `src/img/banners/cbg-8.gif`,
+      background_url: `src/img/banners/cbg-7.gif`,
       categories: [
         {
           name: "",
