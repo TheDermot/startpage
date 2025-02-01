@@ -1,11 +1,15 @@
 // latte / frappe / macchiato / mocha
-const palette = macchiato;
+const palette = mocha;
 
 const default_config = {
   overrideStorage: true,
   disabled: [],
   openLastVisitedTab: true,
   localIcons: true,
+   temperature: {
+    location: "Yonkers", // Set your city here
+    scale: "C" // "C" for Celsius or "F" for Fahrenheit
+  },
   tabs: [
     {
       name: "home",
