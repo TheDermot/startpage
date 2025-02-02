@@ -100,9 +100,9 @@ const default_config = {
               icon_color: palette.yellow,
             },
             {
-              name: "dsa",
-              url: "https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2",
-              icon: "list-details",
+              name: "odin",
+              url: "https://www.theodinproject.com/dashboard",
+              icon: "bell-school",
               icon_color: palette.red,
             },
             {
