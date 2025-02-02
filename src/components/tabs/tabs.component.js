@@ -108,7 +108,6 @@ class Tabs extends Component {
           flex-direction: column;
           width: 100%;
           height: 100%;
-          overflow: hidden;
           position: relative;
           border-radius: 15px;
       }
@@ -148,9 +147,7 @@ class Tabs extends Component {
           --flavour: ${CONFIG.palette.mauve};
       }
 
-      .categories ul .links {
-          box-shadow: inset -1px 0 var(--flavour);
-      }
+   
 
       .categories ul[active] {
           right: 0;
