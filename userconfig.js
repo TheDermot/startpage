@@ -72,7 +72,7 @@ const default_config = {
           links: [
             {
               name: "github",
-              url: "https://github.com/ashish0kumar",
+              url: "https://github.com/TheDermot",
               icon: "brand-github",
               icon_color: palette.green,
             },
