@@ -16,13 +16,10 @@ class Links extends Component {
     const { categories } = tabs.find((f) => f.name === tabName);
 
     return `
-      ${categories
-        .map(({ name, links }) => {
-          return `
-          <li>
-            <h1>${name}</h1>
-              <div class="links-wrapper">
-              ${links
+      
+          ${categories
+            .map(({ links }) => {
+              return links
                 .map(
                   (link) => `
                   <div class="link-info">
@@ -30,13 +27,12 @@ class Links extends Component {
                       ${Links.getIcon(link)}
                       ${link.name ? `<p class="link-name">${link.name}</p>` : ""}
                     </a>
-                </div>`,
+                  </div>`
                 )
-                .join("")}
-            </div>
-          </li>`;
-        })
-        .join("")}
+                .join("");
+            })
+            .join("")}
+        
     `;
   }
 }
@@ -47,14 +43,14 @@ class Category extends Component {
   }
 
   static getBackgroundStyle(url) {
-    return `style="background-image: url(${url}); background-repeat: no-repeat;background-size: contain;"`;
+    return `style="background-image: url(${url});"`;
   }
 
   static getAll(tabs) {
     return `
       ${tabs
         .map(({ name, background_url }, index) => {
-          return `<ul class="${name}" ${Category.getBackgroundStyle(background_url)} ${index == 0 ? "active" : ""}>
+          return `<ul class="background" ${Category.getBackgroundStyle(background_url)} ${index == 0 ? "active" : ""}>
             <div class="banner"></div>
             <div class="links">${Links.getAll(name, tabs)}</div>
           </ul>`;
@@ -108,6 +104,8 @@ class Tabs extends Component {
       }
 
       .categories {
+          display: flex;
+          flex-direction: column;
           width: 100%;
           height: 100%;
           overflow: hidden;
@@ -121,7 +119,6 @@ class Tabs extends Component {
           width: 100%;
           height: 100%;
           right: 100%;
-          background: ${CONFIG.palette.base} url("../img/bg-1.gif") repeat left;
           transition: all .6s;
           # animation: scroll 25s ease-in-out infinite;
       }
@@ -166,7 +163,10 @@ class Tabs extends Component {
           height: 100%;
           background: ${CONFIG.palette.base};
           padding: 4% 6%;
+          display: flex;
           flex-wrap: wrap;
+          justify-content: center;
+          align-content: center;
       }
 
       .categories .links li {
@@ -189,9 +189,14 @@ class Tabs extends Component {
 
       .categories .link-info {
           display: inline-flex;
+          flex-grow: 0;
+          flex-shrink: 1;
+          flex-basis: content;
       }
-
-      .categories .link-info:not(:last-child) { margin-right: 1em; }
+      .background {
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
 
       .categories ul .links a:hover {
           transform: translate(0, 4px);
@@ -200,7 +205,6 @@ class Tabs extends Component {
       }
 
       .categories ul::after {
-          content: attr(class);
           position: absolute;
           display: flex;
           text-transform: uppercase;
@@ -248,6 +252,17 @@ class Tabs extends Component {
       .categories .links-wrapper {
           display: flex;
           flex-wrap: wrap;
+          gap: 1em; /* Add spacing between items */
+      }
+
+      @media (max-width: 600px) {
+        #panels {
+          height: 780px; /* Further increase height for very small screens */
+        }
+        .categories .background{
+          background-position: center;
+          background-size: cover;
+        }
       }
 
       .ti {
@@ -272,7 +287,6 @@ class Tabs extends Component {
   template() {
     return `
       <div id="links" class="-">
-
         <div id="panels">
           <div class="categories">
             ${Category.getAll(this.tabs)}

@@ -12,7 +12,7 @@ const default_config = {
   },
   tabs: [
     {
-      name: "home",
+      name: "",
       background_url: `src/img/banners/cbg-7.gif`,
       categories: [
         {
