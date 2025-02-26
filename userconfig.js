@@ -8,7 +8,7 @@ const default_config = {
   localIcons: true,
   temperature: {
     location: "Yonkers", // Set your city here
-    scale: "C" // "C" for Celsius or "F" for Fahrenheit
+    scale: "C", // "C" for Celsius or "F" for Fahrenheit
   },
   tabs: [
     {
@@ -20,7 +20,7 @@ const default_config = {
           links: [
             {
               name: "gmail",
-              url: "https://mail.google.com",
+              url: "https://mail.google.com/mail/u/1/#inbox",
               icon: "brand-gmail",
               icon_color: palette.blue,
             },
@@ -111,7 +111,7 @@ const default_config = {
               icon: "certificate",
               icon_color: palette.lavender,
             },
-          ]
+          ],
         },
         {
           name: "",
@@ -123,8 +123,8 @@ const default_config = {
               icon_color: palette.teal,
             },
             {
-              name: "claude",
-              url: "https://claude.ai/new",
+              name: "deepseek",
+              url: "https://chat.deepseek.com/",
               icon: "robot",
               icon_color: palette.peach,
             },
@@ -134,7 +134,7 @@ const default_config = {
               icon: "keyboard",
               icon_color: palette.red,
             },
-          ]
+          ],
         },
       ],
     },
