@@ -25,8 +25,8 @@ const default_config = {
               icon_color: palette.blue,
             },
             {
-              name: "classroom",
-              url: "https://classroom.google.com/u/1/",
+              name: "wgu",
+              url: "https://my.wgu.edu/",
               icon: "books",
               icon_color: palette.green,
             },
@@ -52,12 +52,6 @@ const default_config = {
               url: "https://www.reddit.com/",
               icon: "brand-reddit",
               icon_color: palette.peach,
-            },
-            {
-              name: "x",
-              url: "https://x.com",
-              icon: "brand-x",
-              icon_color: palette.sky,
             },
             {
               name: "discord",
